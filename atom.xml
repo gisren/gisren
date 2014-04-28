@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Giscafe's blog]]></title>
+  <subtitle><![CDATA[Keep GIS simple and smart]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://gisren.com/"/>
+  <updated>2014-04-28T10:05:38.839Z</updated>
+  <id>http://gisren.com/</id>
+  
+  <author>
+    <name><![CDATA[giscafe]]></name>
+    
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexo静态博客搭建教程[1]]]></title>
+    <link href="http://gisren.com/2014/04/28/hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%5B1%5D/"/>
+    <id>http://gisren.com/2014/04/28/hexo静态博客搭建教程[1]/</id>
+    <published>2014-04-28T07:04:49.000Z</published>
+    <updated>2014-04-28T08:40:48.000Z</updated>
+    <content type="html"><![CDATA[<hr>
+<h3 id="Hexo的介绍用一句话即可：">Hexo的介绍用一句话即可：</h3>
+<p><strong>A fast, simple &amp; powerful blog framework,powered by Node.js</strong></p>
+<p>Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到<code>gitcafe</code>(国内）,<code>github</code>和<code>heroku</code>（国外）。giscafe’s bolg托管在<code>gitcafe</code>，理由简单，两个名称很像，O(∩_∩)O哈哈哈~<br>Hexo作者来自台湾：<a href="https://github.com/tommy351/hexo" target="_blank">@tommy351</a></p>
+<p>Hexo搭建教程官方的帮助文档很详细，查看官方版版主文档请移步：<a href="http://hexo.io/docs/" target="_blank">Hexo Documentation</a></p>
+<p>下边介绍一下如何在gitcafe上搭建Hexo博客：<br>首先整体步骤有几个：</p>
+<blockquote>
+<ul>
+<li><strong>下载Git和Nodejs安装到电脑上</strong>，我使用的是<a href="http://pan.baidu.com/s/1o6LQINK" target="_blank">Git</a>（版本为1.9.2）和<a href="http://pan.baidu.com/s/1o6LQINK" target="_blank">Node.js</a>（版本为Win7 32位），建议到<a href="http://git-scm.com/" target="_blank">Git</a>和<a href="http://nodejs.org/" target="_blank">Nodejs</a>官网下载适合自己的版本</li>
+<li><strong>注册<a href="http://gitcafe.com/signup?invited_by=giscafe" target="_blank">gitcafe</a>账号</strong></li>
+<li><strong>安装Hexo程序</strong></li>
+<li><strong>博客配置托管到gitcafe</strong></li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="（1）下载Git和Nodejs安装到电脑上">（1）下载Git和Nodejs安装到电脑上</h3>
+<p>到<a href="http://git-scm.com/" target="_blank">Git</a>和<a href="http://nodejs.org/" target="_blank">Nodejs</a>官网下载适合自己电脑的版本后安装，更改自己想要安装的位置，其他设置默认即可，安装很简单。这里不介绍，安装成功会多这两个：<br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_01.jpg" alt=""></p>
+<h3 id="（2）新建目录">（2）新建目录</h3>
+<p>在自己喜欢的一个目录下新建一个目录，命名自定义，这里我命名为<code>hexo</code>,在这个文件夹内右键》选择<code>Git Bash</code>命令，会打开如图窗口<br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_02.jpg" alt=""></p>
+<p>这就是传说中的Git命令窗口，更多关于Git的命令使用和教程可以网上搜索或者到官网学习。</p>
+<h3 id="（3）下载安装Hexo">（3）下载安装Hexo</h3>
+<pre><code><span class="variable">$ </span>npm install hexo -g
+</code></pre><p>使用上面的命令来下载安装Hexo程序</p>
+<h3 id="（4）创建博客文件夹">（4）创建博客文件夹</h3>
+<pre><code>$ hexo init blog &amp;&amp; <span class="built_in">cd</span> blog
+</code></pre><p>或</p>
+<pre><code><span class="variable">$ </span>hexo init
+</code></pre><p>来创建博客目录，<code>$ hexo init blog &amp;&amp; cd blog</code>是在根目录下创建一个blog文件夹再创建博客，<code>$ hexo init</code>则为直接在根目录创建博客文件夹：<br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_04.jpg" alt=""><br>最后文件夹如图：<br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_03.jpg" alt=""></p>
+<p><code>PS:</code>下边是Hexo在Git里搭建的几个日后常用命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>$ hexo generate      <span class="comment">//可以简写为$hexo g,本地文件更改后都需要执行一次，相当于提交更改</span>
+
+$ hexo server        <span class="comment">//可以简写为$hexo s，本地服务启动，启动后可以在浏览器地址输入"localhost:4000"来访问博客，用于本地调试，满意了再提交</span>
+
+$ hexo deploy        <span class="comment">//可以简写为$hexo d，提交代码到空间（托管处）</span>
+</pre></td></tr></table></figure>
+
+<h3 id="（5）本地博客搭建完成">（5）本地博客搭建完成</h3>
+<p>在git命令窗口中使用以下两个命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>$hexo generate或hexo g
+$hexo server或hexo s
+</pre></td></tr></table></figure>
+
+<p><img src="http://giscafe.gitcafe.com/static/img/hexo_course_05.jpg" alt="hexo generate"><br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_06.jpg" alt="hexo server"><br><code>[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop</code><br>浏览器输入<a href="http://localhost:4000" target="_blank">http://localhost:4000</a> 即可打开刚建好的Hexo博客了。<br><img src="http://giscafe.gitcafe.com/static/img/hexo_course_07.jpg" alt="Hello World"><br><strong>按<code>Ctrl+C</code>可以停止程序</strong></p>
+<hr>
+<p><em>通过以上几个步骤即可完成Hexo博客的本地搭建，托管gitcafe教程见下一篇</em></p>
+<hr>
+<p>作者 <a href="http://weibo.com/laohoubin" target="_blank">@勞黑炭要好好好学习</a><br>2014 年 04月 28日    </p>
+]]></content>
+    
+    
+      <category term="hexo教程" scheme="http://gisren.com/tags/hexo%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://gisren.com/tags/hexo/"/>
+    
+      <category term="git" scheme="http://gisren.com/tags/git/"/>
+    
+      <category term="nodejs" scheme="http://gisren.com/tags/nodejs/"/>
+    
+      <category term="node.js" scheme="http://gisren.com/tags/node.js/"/>
+    
+      <category term="gitcafe" scheme="http://gisren.com/tags/gitcafe/"/>
+    
+      <category term="hexo" scheme="http://gisren.com/categories/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Giscafe博客建立]]></title>
+    <link href="http://gisren.com/2014/04/27/Giscafe/"/>
+    <id>http://gisren.com/2014/04/27/Giscafe/</id>
+    <published>2014-04-27T09:13:48.000Z</published>
+    <updated>2014-04-28T05:43:15.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="giscafe博客创建">giscafe博客创建</h2>
+<h3 id="使用程序类型：Hexo">使用程序类型：<a href="http://hexo.io" target="_blank">Hexo</a></h3>
+<h3 id="托管位置：gitcafe">托管位置：<a href="http://gitcafe.com/signup?invited_by=giscafe" target="_blank">gitcafe</a></h3>
+]]></content>
+    
+    
+      <category term="hexo" scheme="http://gisren.com/tags/hexo/"/>
+    
+      <category term="giscafe" scheme="http://gisren.com/tags/giscafe/"/>
+    
+      <category term="gitcafe" scheme="http://gisren.com/tags/gitcafe/"/>
+    
+      <category term="hexo" scheme="http://gisren.com/categories/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://gisren.com/2014/04/27/hello-world/"/>
+    <id>http://gisren.com/2014/04/27/hello-world/</id>
+    <published>2014-04-27T02:03:43.000Z</published>
+    <updated>2014-04-28T05:38:54.000Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io" target="_blank">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs" target="_blank">documentation</a> to learn how to use.</p>
+]]></content>
+    
+    
+      <category term="hexo" scheme="http://gisren.com/tags/hexo/"/>
+    
+      <category term="hexo教程" scheme="http://gisren.com/tags/hexo%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="hexo" scheme="http://gisren.com/categories/hexo/"/>
+    
+  </entry>
+  
+</feed>
